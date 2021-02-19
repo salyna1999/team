@@ -1,22 +1,25 @@
 <template>
-  <v-content>
-    <v-card>
-      <v-card-text>
-        <v-btn @click="start">Start</v-btn>
-        <v-btn @click="end">End</v-btn>
-      </v-card-text>
-      <v-card-text>
-        <p>State: <span id="state"></span></p>
-        <p>Cord X: <span id="docX"></span></p>
-        <p>Cord Y: <span id="docY"></span></p>
-        <p>Timestamp: <span id="time"></span></p>
-      </v-card-text>
-    </v-card>
-    <div
-      id="gaze"
-      style="position: absolute;display:none;width: 100px;height: 100px;border-radius: 50%;border: solid 2px  rgba(255, 255,255, .2);	box-shadow: 0 0 100px 3px rgba(125, 125,125, .5);	pointer-events: none;	z-index: 999999"
-    ></div>
-  </v-content>
+  <v-app dark>
+    <v-content>
+      <v-card>
+        <v-card-text>
+          <v-btn @click="start">Start</v-btn>
+          <v-btn @click="end">End</v-btn>
+        </v-card-text>
+        <v-card-text>
+          <p>State: <span id="state"></span></p>
+          <p>Cord X: <span id="docX"></span></p>
+          <p>Cord Y: <span id="docY"></span></p>
+          <p>Timestamp: <span id="time"></span></p>
+        </v-card-text>
+      </v-card>
+      <div
+        id="gaze"
+        style="position: absolute;display:none;width: 100px;height: 100px;border-radius: 50%;border: solid 2px  rgba(255, 255,255, .2);	box-shadow: 0 0 100px 3px rgba(125, 125,125, .5);	pointer-events: none;	z-index: 999999"
+      ></div>
+      <v-btn class="b" router to="/main">Start Eyes Control</v-btn>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -63,3 +66,24 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.b {
+  background-color: #581845;
+  border: none;
+  color: white;
+  text-align: center;
+  padding: 16px 32px;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  padding-left: 50%;
+  width: 20%;
+  height: 20%;
+  margin-top: 50px;
+}
+.b:hover {
+  background-color: #900c3f;
+  color: black;
+}
+</style>
