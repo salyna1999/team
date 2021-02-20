@@ -15,9 +15,9 @@
           label="Confirm Password"
           type="password"
         />
-        <NuxtLink class="l" to="/login">do you have account already?</NuxtLink>
+        <NuxtLink class="l" to="/">do you have account already?</NuxtLink>
         <br />
-        <v-btn class="b" to="/login">Sign up</v-btn>
+        <v-btn class="b" to="/">Sign up</v-btn>
       </v-form>
     </v-container>
   </v-app>
