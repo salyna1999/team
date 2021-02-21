@@ -17,7 +17,7 @@
         id="gaze"
         style="position: absolute;display:none;width: 100px;height: 100px;border-radius: 50%;border: solid 2px  rgba(255, 255,255, .2);	box-shadow: 0 0 100px 3px rgba(125, 125,125, .5);	pointer-events: none;	z-index: 999999"
       ></div>
-      <v-btn class="b" router to="/main">click to start your text</v-btn>
+      <v-btn height="70%" class="b" to="/main">Look here to Click this Button</v-btn>
     </v-container>
   </v-app>
 </template>
@@ -74,13 +74,14 @@ export default {
   color: white;
   text-align: center;
   padding: 16px 32px;
-  font-size: 16px;
+  font-size: 50px;
   margin: 4px 2px;
   transition-duration: 0.4s;
-  padding-left: 50%;
-  width: 25%;
-  height: 20%;
-  margin-top: 50px;
+  padding-left: 0%;
+  width: 100%;
+  max-height: 60%;
+  height: 60%;
+  margin-top: 10px;
 }
 .b:hover {
   background-color: #900c3f;

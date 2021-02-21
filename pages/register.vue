@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <v-container>
-      <label class="Login">Registeration Page</label>
+      <label class="Login">Registration Page</label>
       <v-form class="contain">
         <v-text-field v-model="loginfor.User_Name" label="User Name" />
         <v-text-field v-model="loginfor.email" label="Email" />
