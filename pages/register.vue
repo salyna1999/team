@@ -2,16 +2,16 @@
   <v-app dark>
     <v-container>
       <label class="Login">Registration Page</label>
-      <v-form class="contain">
-        <v-text-field v-model="loginfor.User_Name" label="User Name" />
-        <v-text-field v-model="loginfor.email" label="Email" />
+      <v-form class="contain" @submit.prevent="register">
+        <v-text-field type="text"  v-model="userName" label="User Name" />
+        <v-text-field type="email" v-model="email" label="Email" />
         <v-text-field
-          v-model="loginfor.password"
+          v-model="password"
           label="Password"
           type="password"
         />
         <v-text-field
-          v-model="loginfor.Confirm_password"
+          v-model="registrationPassword"
           label="Confirm Password"
           type="password"
         />
@@ -24,19 +24,21 @@
 </template>
 
 <script>
+
 export default {
-  data: () => ({
-    loginfor: {
-      email: "",
-      password: " "
+  setup(){
+    const email = ref('');
+    const password = ref('');
+
+
+    return {
+      register,
+      email,
+      password
     }
-  }),
-  methods: {
-    loginUser() {
-      this.$store.dispatch("loginUser", this.loginfor);
-    }
-  }
-};
+   }
+
+}
 </script>
 
 <style lang="scss" scoped>

@@ -2,7 +2,8 @@
   <v-app dark>
     <v-container>
       <label class="Login">Login Page</label>
-      <v-form class="contain">
+
+      <v-form @submit.prevent='Login' class="contain">
         <v-text-field v-model="loginfor.email" label="Email" />
         <v-text-field
           v-model="loginfor.password"
@@ -12,14 +13,16 @@
         <NuxtLink to="/register" class="l">do you have account yet?</NuxtLink>
 
         <br />
-        <v-btn class="b" to="/calibration">Login</v-btn>
+        <v-btn type="submit" value="Login" class="b" to="/calibration">Login</v-btn>
       </v-form>
     </v-container>
   </v-app>
 </template>
 
 <script>
+
 export default {
+
   data: () => ({
     loginfor: {
       email: "",
@@ -27,9 +30,7 @@ export default {
     }
   }),
   methods: {
-    loginUser() {
-      this.$store.dispatch("loginUser", this.loginfor);
-    }
+
   }
 };
 </script>
