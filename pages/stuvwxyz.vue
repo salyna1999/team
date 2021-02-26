@@ -9,11 +9,11 @@
         class="inputval"
         >Text</v-input
       >
-      <v-btn height="100%" class="c" to="/alphabet">Alphabet</v-btn>
-      <v-btn height="100%" class="c">Words</v-btn>
+      <v-btn height="100%" class="c" to="/stu">stu</v-btn>
+      <v-btn height="100%" class="c" to="/vwx">vwx</v-btn>
 
-      <v-btn height="100%" class="c" to="/number">Numbers/Symbols</v-btn>
-      <v-btn height="100%" class="c">Emojis</v-btn>
+      <v-btn height="100%" class="c" to="/yz">yz</v-btn>
+      <v-btn height="100%" class="c" to="/gazeboard">back</v-btn>
     </v-container>
   </v-app>
 </template>

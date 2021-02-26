@@ -15,9 +15,19 @@
       </v-card>
       <div
         id="gaze"
-        style="position: absolute;display:none;width: 100px;height: 100px;border-radius: 50%;border: solid 2px  rgba(255, 255,255, .2);	box-shadow: 0 0 100px 3px rgba(125, 125,125, .5);	pointer-events: none;	z-index: 999999"
+        style="
+          position: absolute;
+          display: none;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          border: solid 2px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 0 100px 3px rgba(125, 125, 125, 0.5);
+          pointer-events: none;
+          z-index: 999999;
+        "
       ></div>
-      <v-btn height="70%" class="b" to="/main">Look here to Click this Button</v-btn>
+      <v-btn class="b" router to="/main">click to start your text</v-btn>
     </v-container>
   </v-app>
 </template>
@@ -73,15 +83,13 @@ export default {
   border: none;
   color: white;
   text-align: center;
-  padding: 16px 32px;
-  font-size: 50px;
-  margin: 4px 2px;
+  font-size: 25px;
   transition-duration: 0.4s;
-  padding-left: 0%;
   width: 100%;
-  max-height: 60%;
-  height: 60%;
-  margin-top: 10px;
+  height: 100%;
+  margin-top: 50px;
+
+  cursor: pointer;
 }
 .b:hover {
   background-color: #900c3f;
