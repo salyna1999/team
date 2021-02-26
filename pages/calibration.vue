@@ -16,7 +16,6 @@
       </v-card>
       <div class="c" 
         id="gaze"
-<<<<<<< Updated upstream
         style="
           position: absolute;
           display: none;
@@ -29,16 +28,7 @@
           z-index: 999999;
         "
       ></div>
-      <v-btn class="b" router to="/main">click to start your text</v-btn>
-=======
-        style= "cursor: pointer;  position: absolute;display:none;width: 100px;height: 100px;border-radius: 50%;border: solid 2px  rgba(255, 255,255, .2);	box-shadow: 0 0 100px 3px rgba(125, 125,125, .5);	pointer-events: painted;	z-index: 999999"
-      >
-      
-      </div >
-      <v-btn @click='assignkey' style="margin-top: 10px"> assign mouse to gazecircle </v-btn>
-      <v-btn @mouseover="alertbox" height="70%" class="b" to="/main">Look here to Click this Button</v-btn>
-      
->>>>>>> Stashed changes
+      <v-btn height="70%" class="b" to="/main">Look here to Click this Button</v-btn>
     </v-container>
   </v-app>
 </template>

@@ -56,16 +56,9 @@ export default {
   height: 100%;
 }
 
-<<<<<<< Updated upstream
-.inputval {
-  font-size: 30px;
-  color: black;
-  border-radius: 20px;
-=======
 .inputval{
     font-size: 30px;
     color:black;
     border-radius: 20px,;
->>>>>>> Stashed changes
 }
 </style>
