@@ -9,7 +9,7 @@
           <v-text-field label="Password" type="password" />
           <v-text-field label="Confirm Password" type="password" />
           <NuxtLink class="l" to="/">do you have account already?</NuxtLink>
-
+          <br />
           <v-btn class="b" to="/">Sign up</v-btn>
         </v-form>
       </div>

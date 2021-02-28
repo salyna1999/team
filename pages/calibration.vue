@@ -6,24 +6,17 @@
           <v-btn id="hello" @click="start">Start</v-btn>
           <v-btn @click="end">End</v-btn>
         </v-card-text>
-        <v-card-text v-on:load='CheckDiv()'>
+        <v-card-text v-on:load="CheckDiv()">
           <p>State: <span id="state"></span></p>
           <p>Cord X: <span id="docX"></span></p>
           <p>Cord Y: <span id="docY"></span></p>
           <p>Timestamp: <span id="time"></span></p>
-<<<<<<< Updated upstream
-        </v-card-text>
-      </v-card>
-      <div
-        class="c"
-=======
           <v-btn> Assign to mouse </v-btn>
         </v-card-text>
       </v-card>
       <div
-  class="c"
-  ref='gaze'
->>>>>>> Stashed changes
+        class="c"
+        ref="gaze"
         id="gaze"
         style="
           position: absolute;
@@ -37,53 +30,36 @@
           z-index: 999999;
         "
       ></div>
-<<<<<<< Updated upstream
-      <v-btn height="70%" class="b" to="/main"
+
+      <v-btn
+        id="hoverbutton"
+        ref="hoverbutton"
+        height="60%"
+        class="b"
+        to="/main"
         >Look here to Click this Button</v-btn
       >
-=======
-
-      <v-btn  id='hoverbutton'  ref='hoverbutton'  height="60%" class="b" to="/main" >Look here to Click this Button</v-btn>
->>>>>>> Stashed changes
     </v-container>
   </v-app>
 </template>
 
 <script>
-
 export default {
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
   data: () => ({
     state: "",
     x: "",
     y: "",
     time: "",
-    object_1:"",
-    object_2:""
-
+    object_1: "",
+    object_2: ""
   }),
-//  created() {
-//    this.isCollapsed()
-   //window.addEventListener('load', this.collidesWith())
-//},
+  //  created() {
+  //    this.isCollapsed()
+  //window.addEventListener('load', this.collidesWith())
+  //},
 
   methods: {
-<<<<<<< Updated upstream
-    assignkey() {
-      var mx = clientX;
-      var my = clientY;
-      clientX = gaze.style.left;
-      clientX = gaze.style.top;
-    },
-    alertbox() {
-      alert("button clicked");
-    },
-=======
-/*isCollapsed:function(dragMe, rect){
+    /*isCollapsed:function(dragMe, rect){
   dragMe = this.$refs.gaze
   rect = this.$refs.hoverbutton
   this.object_1 = this.$refs['gaze'].getBoundingClientRect().x
@@ -99,30 +75,25 @@ export default {
   }
 },*/
 
-  alertbox(){
-    
-var ideal;
-document.onmouseover = resetTimer;
-document.onmouseout = retTimer;
+    alertbox() {
+      var ideal;
+      document.onmouseover = resetTimer;
+      document.onmouseout = retTimer;
 
-function showmsg() {
-  document.getElementById("hoverbutton").click(); // Click on the checkbox
+      function showmsg() {
+        document.getElementById("hoverbutton").click(); // Click on the checkbox
+      }
 
-}
+      function retTimer() {
+        clearTimeout(ideal);
+      }
 
-function retTimer() {
-  clearTimeout(ideal);
-}
-
-function resetTimer() {
-  clearTimeout(ideal);
-  ideal = setTimeout(showmsg, 2000);
-}
-window.onload = resetTimer;
-
-
-},
->>>>>>> Stashed changes
+      function resetTimer() {
+        clearTimeout(ideal);
+        ideal = setTimeout(showmsg, 2000);
+      }
+      window.onload = resetTimer;
+    },
     start() {
       GazeCloudAPI.StartEyeTracking();
       GazeCloudAPI.OnResult = function(GazeData) {

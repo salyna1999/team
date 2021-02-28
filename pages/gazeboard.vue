@@ -39,6 +39,7 @@ export default {
   transition-duration: 0.4s;
   width: 48%;
   height: 100%;
+  border-radius: 50px;
 }
 
 .inputval {

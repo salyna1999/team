@@ -3,7 +3,7 @@
     <v-container>
       <p></p>
       <app-text></app-text>
-      <button height="100%" class="c" type="button" @click="update">a</button>
+      <v-btn height="100%" class="c" type="button" @click="update">a</v-btn>
       <v-btn height="100%" class="c">b</v-btn>
 
       <v-btn height="100%" class="c">space</v-btn>

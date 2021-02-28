@@ -10,28 +10,28 @@ export default {
   data() {
     return {
       dragMe: "",
-      rect: "",
+      rect: ""
     };
   },
-  created: function () {
+  created: function() {
     if (process.client) {
       this.myFunction();
     }
   },
   methods: {
-    myFunction: function () {
+    myFunction: function() {
       this.rect = document.getElementById("rect");
       this.dragMe = document.getElementById("dragMe");
 
       this.initDrag({
         element: this.dragMe,
-        drag: function () {
+        drag: function() {
           this.isCollapsed(this.dragMe, this.rect);
-        },
+        }
       });
     },
 
-    isCollapsed: function (dragMe, rect) {
+    isCollapsed: function(dragMe, rect) {
       var object_1 = this.dragMe.getBoundingClientRect();
       var object_2 = this.rect.getBoundingClientRect();
 
@@ -42,13 +42,13 @@ export default {
         object_1.top + object_1.height > object_2.top
       ) {
         rect.classList.add("collide");
-        document.getElementById('dragMe').style.background = 'blue';
+        document.getElementById("dragMe").style.background = "blue";
       } else {
         rect.classList.remove("collide");
       }
     },
 
-    initDrag: function (options) {
+    initDrag: function(options) {
       var element = options.element;
       var mousedown,
         mouseup,
@@ -87,14 +87,14 @@ export default {
         offsetTop = element.offsetTop;
         document.addEventListener(
           "mousemove",
-          function (ev) {
+          function(ev) {
             mouseMove(ev);
           },
           false
         );
         document.addEventListener(
           "mouseup",
-          function (ev) {
+          function(ev) {
             mouseUp(ev);
           },
           false
@@ -105,13 +105,13 @@ export default {
 
       element.addEventListener(
         "mousedown",
-        function (ev) {
+        function(ev) {
           mouseDown(ev);
         },
         false
       );
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -124,7 +124,7 @@ container {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: #4CAF50;
+  background: #4caf50;
   width: 180px;
   height: 150px;
   border-radius: 5px;
@@ -135,7 +135,7 @@ container {
   font-size: 25px;
 }
 .rectangle-1.collide {
-  background: #EF5350;
+  background: #ef5350;
 }
 .rectangle-1:after {
   content: ":-)";
@@ -149,7 +149,7 @@ container {
 }
 .rectangle-2 {
   position: absolute;
-  background: #F5B041;
+  background: #f5b041;
   width: 100px;
   height: 100px;
   border-radius: 5px;
@@ -184,6 +184,5 @@ body {
     color-stop(15%, rgba(239, 247, 255, 1)),
     color-stop(100%, rgba(180, 188, 221, 1))
   );
-
 }
 </style>

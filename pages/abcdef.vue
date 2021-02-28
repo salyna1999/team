@@ -2,7 +2,9 @@
   <v-app dark>
     <v-container>
       <p></p>
-      <app-text></app-text>
+      <div>
+        <app-text></app-text>
+      </div>
       <v-btn height="100%" class="c" to="/ab">ab</v-btn>
       <v-btn height="100%" class="c" to="/cd">cd</v-btn>
 
