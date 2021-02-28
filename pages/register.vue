@@ -1,6 +1,7 @@
 <template>
   <v-app dark>
     <v-container>
+<<<<<<< Updated upstream
       <label class="Login">Registration Page</label>
       <v-form class="contain" @submit.prevent="register">
         <v-text-field type="text"  v-model="userName" label="User Name" />
@@ -19,12 +20,40 @@
         <br />
         <v-btn class="b" to="/">Sign up</v-btn>
       </v-form>
+=======
+      <div class="st">
+        <label class="Login">Registration Page</label>
+        <v-form class="contain">
+          <v-text-field v-model="loginfor.User_Name" label="User Name" />
+          <v-text-field v-model="loginfor.email" label="Email" />
+          <v-text-field
+            v-model="loginfor.password"
+            label="Password"
+            type="password"
+          />
+          <v-text-field
+            v-model="loginfor.Confirm_password"
+            label="Confirm Password"
+            type="password"
+          />
+          <NuxtLink class="l" to="/">do you have account already?</NuxtLink>
+          <br />
+          <v-btn class="b" to="/">Sign up</v-btn>
+        </v-form>
+      </div>
+>>>>>>> Stashed changes
     </v-container>
+
+    <app-footer></app-footer>
   </v-app>
 </template>
 
 <script>
+<<<<<<< Updated upstream
 
+=======
+import footer from "./footer.vue";
+>>>>>>> Stashed changes
 export default {
   setup(){
     const email = ref('');
@@ -36,9 +65,17 @@ export default {
       email,
       password
     }
+<<<<<<< Updated upstream
    }
 
 }
+=======
+  },
+  components: {
+    "app-footer": footer
+  }
+};
+>>>>>>> Stashed changes
 </script>
 
 <style lang="scss" scoped>
@@ -73,5 +110,9 @@ export default {
 }
 .l {
   padding-top: 40%;
+}
+.st {
+  background-color: rgb(48, 48, 56);
+  border-radius: 100px;
 }
 </style>

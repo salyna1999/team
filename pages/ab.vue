@@ -2,14 +2,15 @@
   <v-app dark>
     <v-container>
       <p></p>
-      <v-input
-        value="text"
-        background-color="white"
-        height="50px"
-        class="inputval"
-        >Text</v-input
+      <app-text type="text" v-model="total" />
+      <v-btn
+        @onChange="onChange"
+        @onKeyPress="onKeyPress"
+        :input="input"
+        height="100%"
+        class="c"
+        >a</v-btn
       >
-      <v-btn height="100%" class="c">a</v-btn>
       <v-btn height="100%" class="c">b</v-btn>
 
       <v-btn height="100%" class="c">space</v-btn>
@@ -19,19 +20,25 @@
 </template>
 
 <script>
+import txt from "./txt.vue";
 export default {
-  data() {
-    return {
-      characters: {
-        key1: "alphabet",
-        key2: "abcdef",
-        key3: "ab",
-        key4: "a"
-      }
-    };
+  props: ["a"],
+  data: () => ({
+    input: ""
+  }),
+  components: {
+    "app-text": txt
   },
   methods: {
-    showdata: function() {}
+    onChange(input) {
+      this.input = input;
+    },
+    onKeyPress(button) {
+      console.log("a", button);
+    },
+    onInputChange(input) {
+      this.input = input.target.value;
+    }
   }
 };
 </script>
@@ -54,11 +61,6 @@ export default {
   transition-duration: 0.4s;
   width: 48%;
   height: 100%;
-}
-
-.inputval {
-  font-size: 30px;
-  color: black;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 </style>

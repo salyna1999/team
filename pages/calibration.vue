@@ -107,7 +107,6 @@ export default {
   width: 100%;
   height: 100%;
   margin-top: 50px;
-
   cursor: pointer;
 }
 .b:hover {

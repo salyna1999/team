@@ -55,5 +55,6 @@ export default {};
   transition-duration: 0.4s;
   width: 100%;
   height: 100%;
+  border-radius: 50px;
 }
 </style>

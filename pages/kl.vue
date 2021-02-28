@@ -2,13 +2,7 @@
   <v-app dark>
     <v-container>
       <p></p>
-      <v-input
-        value="text"
-        background-color="white"
-        height="50px"
-        class="inputval"
-        >Text</v-input
-      >
+      <app-text></app-text>
       <v-btn height="100%" class="c">k</v-btn>
       <v-btn height="100%" class="c">l</v-btn>
 
@@ -19,19 +13,10 @@
 </template>
 
 <script>
+import txt from "./txt.vue";
 export default {
-  data() {
-    return {
-      characters: {
-        key1: "alphabet",
-        key2: "abcdef",
-        key3: "ab",
-        key4: "a"
-      }
-    };
-  },
-  methods: {
-    showdata: function() {}
+  components: {
+    "app-text": txt
   }
 };
 </script>
@@ -54,11 +39,6 @@ export default {
   transition-duration: 0.4s;
   width: 48%;
   height: 100%;
-}
-
-.inputval {
-  font-size: 30px;
-  color: black;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 </style>
