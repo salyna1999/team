@@ -1,8 +1,9 @@
 import colors from "vuetify/es5/util/colors";
 import path from "path";
 import fs from "fs";
-
+// collision
 export default {
+  
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
   
