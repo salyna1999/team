@@ -11,10 +11,10 @@
           <p>Cord X: <span id="docX"></span></p>
           <p>Cord Y: <span id="docY"></span></p>
           <p>Timestamp: <span id="time"></span></p>
-
         </v-card-text>
       </v-card>
-      <div class="c" 
+      <div
+        class="c"
         id="gaze"
         style="
           position: absolute;
@@ -28,15 +28,15 @@
           z-index: 999999;
         "
       ></div>
-      <v-btn height="70%" class="b" to="/main">Look here to Click this Button</v-btn>
+      <v-btn height="70%" class="b" to="/main"
+        >Look here to Click this Button</v-btn
+      >
     </v-container>
   </v-app>
 </template>
 
-
 <script>
 export default {
-
   data: () => ({
     state: "",
     x: "",
@@ -44,25 +44,20 @@ export default {
     time: ""
   }),
   methods: {
-    
-
-  assignkey(){
-    var mx = clientX
-    var my = clientY
-    clientX = gaze.style.left
-    clientX = gaze.style.top
-  } , 
-  alertbox(){
-    
-    alert('button clicked')
-
-
-},
+    assignkey() {
+      var mx = clientX;
+      var my = clientY;
+      clientX = gaze.style.left;
+      clientX = gaze.style.top;
+    },
+    alertbox() {
+      alert("button clicked");
+    },
     start() {
       GazeCloudAPI.StartEyeTracking();
       GazeCloudAPI.OnResult = function(GazeData) {
         console.log("GazeData", GazeData);
-      //  localStorage.setItem("GazeData", GazeData);
+        //  localStorage.setItem("GazeData", GazeData);
         document.getElementById("state").innerHTML = GazeData.state;
         document.getElementById("docX").innerHTML = GazeData.docX;
         document.getElementById("docY").innerHTML = GazeData.docY;
@@ -78,7 +73,6 @@ export default {
         gaze.style.top = y + "px";
 
         if (GazeData.state != 0) {
-        
           if (gaze.style.display == "block") gaze.style.display = "none";
         } else {
           if (gaze.style.display == "none") gaze.style.display = "block";
@@ -90,11 +84,11 @@ export default {
     },
     commit() {
       this.$store.commit("EDIT_STATE", GazeData);
-        clientX = x;
-        clientY = y;
+      clientX = x;
+      clientY = y;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -134,8 +128,8 @@ export default {
   color: black;
 }
 
-div.c:hover ~ .b{ 
-   background-color: #0514e6;
-   color: black;
-   }
+div.c:hover ~ .b {
+  background-color: #0514e6;
+  color: black;
+}
 </style>

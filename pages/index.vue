@@ -1,22 +1,6 @@
 <template>
   <v-app dark>
     <v-container>
-<<<<<<< Updated upstream
-      <label class="Login">Login Page</label>
-
-      <v-form @submit.prevent='Login' class="contain">
-        <v-text-field v-model="loginfor.email" label="Email" />
-        <v-text-field
-          v-model="loginfor.password"
-          label="Password"
-          type="password"
-        />
-        <NuxtLink to="/register" class="l">do you have account yet?</NuxtLink>
-
-        <br />
-        <v-btn type="submit" value="Login" class="b" to="/calibration">Login</v-btn>
-      </v-form>
-=======
       <div class="st">
         <div id="app">
           <label class="Login">Login Page</label>
@@ -27,7 +11,7 @@
               label="Password"
               type="password"
             />
-            <NuxtLink to="/register" class="l"
+            <NuxtLink class="l" to="/register"
               >do you have account yet?</NuxtLink
             >
 
@@ -36,20 +20,14 @@
           </v-form>
         </div>
       </div>
->>>>>>> Stashed changes
     </v-container>
     <app-footer></app-footer>
   </v-app>
 </template>
 
 <script>
-<<<<<<< Updated upstream
-
-=======
 import footer from "./footer.vue";
->>>>>>> Stashed changes
 export default {
-
   data: () => ({
     loginfor: {
       email: "",
@@ -57,16 +35,12 @@ export default {
     }
   }),
   methods: {
-<<<<<<< Updated upstream
-
-=======
     loginUser() {
       this.$store.dispatch("loginUser", this.loginfor);
     }
   },
   components: {
     "app-footer": footer
->>>>>>> Stashed changes
   }
 };
 </script>

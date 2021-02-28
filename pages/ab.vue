@@ -2,15 +2,8 @@
   <v-app dark>
     <v-container>
       <p></p>
-      <app-text type="text" v-model="total" />
-      <v-btn
-        @onChange="onChange"
-        @onKeyPress="onKeyPress"
-        :input="input"
-        height="100%"
-        class="c"
-        >a</v-btn
-      >
+      <app-text></app-text>
+      <button height="100%" class="c" type="button" @click="update">a</button>
       <v-btn height="100%" class="c">b</v-btn>
 
       <v-btn height="100%" class="c">space</v-btn>
@@ -22,7 +15,6 @@
 <script>
 import txt from "./txt.vue";
 export default {
-  props: ["a"],
   data: () => ({
     input: ""
   }),
@@ -30,14 +22,8 @@ export default {
     "app-text": txt
   },
   methods: {
-    onChange(input) {
-      this.input = input;
-    },
-    onKeyPress(button) {
-      console.log("a", button);
-    },
-    onInputChange(input) {
-      this.input = input.target.value;
+    update: function() {
+      this.$emit("update");
     }
   }
 };

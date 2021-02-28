@@ -1,11 +1,12 @@
 <template>
   <v-container>
     <input
-      :value="input"
       class="display"
-      @input="onInputChange"
       placeholder="Tap on the virtual keyboard to start"
+      v-for="(letter, index) in letters"
+      :key="index"
     />
+    {{ letter }}
   </v-container>
 </template>
 

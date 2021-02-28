@@ -39,15 +39,11 @@ export default {
   transition-duration: 0.4s;
   width: 48%;
   height: 100%;
-<<<<<<< Updated upstream
 }
 
-.inputval{
-    font-size: 30px;
-    color:black;
-    border-radius: 20px,;
-=======
-  border-radius: 50px;
->>>>>>> Stashed changes
+.inputval {
+  font-size: 30px;
+  color: black;
+  border-radius: 20px;
 }
 </style>
