@@ -34,17 +34,21 @@ export default {
     isCollapsed: function(dragMe, rect) {
       var object_1 = this.dragMe.getBoundingClientRect();
       var object_2 = this.rect.getBoundingClientRect();
+      console.log(object_1)
 
       if (
-        object_1.left < object_2.left + object_2.width &&
+        object_1.right < object_2.left + object_2.width &&
         object_1.left + object_1.width > object_2.left &&
         object_1.top < object_2.top + object_2.height &&
         object_1.top + object_1.height > object_2.top
       ) {
         rect.classList.add("collide");
         document.getElementById("dragMe").style.background = "blue";
+        alert('ello')
       } else {
         rect.classList.remove("collide");
+        alert('this')
+
       }
     },
 
@@ -115,74 +119,12 @@ export default {
 };
 </script>
 
-<style scoped>
-container {
-  position: relative;
-}
-.rectangle-1 {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: #4caf50;
-  width: 180px;
-  height: 150px;
-  border-radius: 5px;
-  transition: 0.3s all ease;
-  color: #fff;
-  text-align: center;
-  line-height: 150px;
-  font-size: 25px;
-}
-.rectangle-1.collide {
-  background: #ef5350;
-}
-.rectangle-1:after {
-  content: ":-)";
-  position: absolute;
-  bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.rectangle-1.collide:after {
-  content: ":-(";
-}
-.rectangle-2 {
-  position: absolute;
-  background: #f5b041;
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
-  z-index: 10;
-  cursor: move;
-  transition: 0.5s box-shadow ease, 0.5s transform ease;
-  transform: translate(0, 0);
-  top: 40%;
-  left: 30%;
-  text-align: center;
-  line-height: 100px;
-  font-size: 17px;
-}
-.rectangle-2.onDrag {
-  box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.2);
-  transform: translate(-3px, -3px);
-}
-
-html,
-body {
-  user-select: none;
-  width: 100%;
-  height: 100%;
-  font-family: "Roboto", sans-serif;
-}
-body {
-  margin: 0;
-  background: -webkit-gradient(
-    left top,
-    right bottom,
-    color-stop(0%, rgba(239, 247, 255, 1)),
-    color-stop(15%, rgba(239, 247, 255, 1)),
-    color-stop(100%, rgba(180, 188, 221, 1))
-  );
-}
-</style>
+        <style>
+container{position: relative;}
+.rectangle-1{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #4CAF50; width: 180px; height: 150px; border-radius: 5px; transition: 0.3s all ease; color: #fff; text-align: center; line-height: 150px; font-size: 25px;}
+.rectangle-1.collide{background: #EF5350;}
+.rectangle-1:after{content:":-)"; position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%);}
+.rectangle-1.collide:after{content:":-("; }
+.rectangle-2{position: absolute; background: #F5B041; width: 100px; height: 100px; border-radius: 5px; z-index: 10; cursor: move; transition: 0.5s box-shadow ease, 0.5s transform ease; transform: translate(0, 0); top: 40%; left: 30%; text-align: center; line-height: 100px; font-size: 17px;}
+.rectangle-2.onDrag{box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.2); transform: translate(-3px, -3px);}
+        </style>

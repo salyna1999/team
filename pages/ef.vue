@@ -3,8 +3,8 @@
     <v-container>
       <p></p>
       <app-text></app-text>
-      <v-btn height="100%" class="c">e</v-btn>
-      <v-btn height="100%" class="c">f</v-btn>
+      <v-btn height="100%" to="/alphabet" class="c">e</v-btn>
+      <v-btn height="100%" to="/alphabet" class="c">f</v-btn>
 
       <v-btn height="100%" class="c">space</v-btn>
       <v-btn height="100%" class="c" to="/gazeboard">back</v-btn>

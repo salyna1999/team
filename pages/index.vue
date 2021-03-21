@@ -4,11 +4,11 @@
       <div class="st">
         <div id="app">
           <label class="Login">Login Page</label>
-          <v-form class="contain">
-            <v-text-field v-model="loginfor.email" label="Email" />
+          <form class="contain" @submit.prevent="pressed">
+            <v-text-field type="text" v-model="email" placeholder="Email" />
             <v-text-field
-              v-model="loginfor.password"
-              label="Password"
+              v-model="password"
+              placeholder="Password"
               type="password"
             />
             <NuxtLink class="l" to="/register"
@@ -16,8 +16,11 @@
             >
 
             <br />
-            <v-btn class="b" to="/calibration">Login</v-btn>
-          </v-form>
+            <v-btn to="calibration" class="b">Login</v-btn>
+            <div class="error" v-if="error"> {{error.message}} </div>
+          </form>
+        <div style="color='red'" class="error" v-if="error"> {{error.message}} </div>
+
         </div>
       </div>
     </v-container>
@@ -26,18 +29,24 @@
 </template>
 
 <script>
+import firebase from "firebase/app"
 import footer from "./footer.vue";
 export default {
-  data: () => ({
-    loginfor: {
+  data(){ 
+    return {
       email: "",
-      password: " "
+      password: "",
+      error:''
     }
-  }),
+  },
   methods: {
-    loginUser() {
-      this.$store.dispatch("loginUser", this.loginfor);
-    }
+    pressed(){
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+      .then(data => { 
+        console.log(data)
+        //this.$router.push('.secret')
+      }).catch(error => this.error = error)
+    },
   },
   components: {
     "app-footer": footer

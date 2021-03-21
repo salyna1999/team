@@ -1,6 +1,5 @@
-import firebase from 'firebase';
+import firebase from "firebase/app"
 
-let app = null;
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -13,8 +12,10 @@ const firebaseConfig = {
     measurementId: "G-BTHQJCS7SQ"
   };
  
-  app = firebase.apps.length
-  ? firebase.app()
-  : firebase.initializeApp(firebaseConfig)
+  let app = null;
+  if(!firebase.apps.length){
+    app = firebase.initializeApp(firebaseConfig)
+   }
+  
 
-  export const db = app.database()
+  export default firebase

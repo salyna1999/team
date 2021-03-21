@@ -20,7 +20,6 @@
         id="gaze"
         style="
           position: absolute;
-          display: none;
           width: 100px;
           height: 100px;
           border-radius: 50%;
@@ -29,10 +28,16 @@
           pointer-events: painted;
           z-index: 999999;
         "
-      ></div>
+      > <h1 style="text-align: center;
+                            color: white; 
+                            margin: auto; 
+                            padding-top: 37%; 
+                            font-size: 80px;">
+                    <div><span id="txt"></span></div>
+                </h1></div>
 
       <v-btn
-        id="hoverbutton"
+        id="rect"
         ref="hoverbutton"
         height="60%"
         class="b"
@@ -53,49 +58,32 @@ export default {
     object_1: "",
     object_2: ""
   }),
-  //  created() {
-  //    this.isCollapsed()
-  //window.addEventListener('load', this.collidesWith())
-  //},
 
   methods: {
-    /*isCollapsed:function(dragMe, rect){
-  dragMe = this.$refs.gaze
-  rect = this.$refs.hoverbutton
-  this.object_1 = this.$refs['gaze'].getBoundingClientRect().x
-  this.object_2 = this.$refs[rect].getBoundingClientRect().x
-  
-  if (object_1.left < object_2.left + object_2.width  && object_1.left + object_1.width  > object_2.left &&
-		object_1.top < object_2.top + object_2.height && object_1.top + object_1.height > object_2.top) {
-    rect.classList.add("collide");
-    alert('hello')
-  }
-  else{
-    rect.classList.remove("collide");
-  }
-},*/
+      start() {
+        var c = 0;
+        var t;
+        var timer_is_on = 0;
+        function timedCount() {
+            document.getElementById("txt").innerHTML = c;
+            c = c + 1;
+            t = setTimeout(timedCount, 1000);
+        }
 
-    alertbox() {
-      var ideal;
-      document.onmouseover = resetTimer;
-      document.onmouseout = retTimer;
+        function startCount() {
+            if (!timer_is_on) {
+                timer_is_on = 1;
+                timedCount();
+            }
+        }
 
-      function showmsg() {
-        document.getElementById("hoverbutton").click(); // Click on the checkbox
-      }
-
-      function retTimer() {
-        clearTimeout(ideal);
-      }
-
-      function resetTimer() {
-        clearTimeout(ideal);
-        ideal = setTimeout(showmsg, 2000);
-      }
-      window.onload = resetTimer;
-    },
-    start() {
+        function stopCount() {
+            clearTimeout(t);
+            timer_is_on = 0;
+        }
+    
       GazeCloudAPI.StartEyeTracking();
+      GazeCloudAPI.StopEyeTracking();
       GazeCloudAPI.OnResult = function(GazeData) {
         console.log("GazeData", GazeData);
         //  localStorage.setItem("GazeData", GazeData);
@@ -119,6 +107,30 @@ export default {
           if (gaze.style.display == "none") gaze.style.display = "block";
         }
       };
+      var rect = document.getElementById("rect");
+            var object_1 = gaze.getBoundingClientRect();
+            var object_2 = rect.getBoundingClientRect();
+
+            if (object_1.left < object_2.left + object_2.width && object_1.left + object_1.width > object_2.left &&
+                object_1.top < object_2.top + object_2.height && object_1.top + object_1.height > object_2.top) {
+                document.getElementById('rect').style.backgroundColor = "red";
+                setTimeout(function () {
+                    //   document.getElementById('yes').click()
+                    startCount()
+                }, 3000);
+                if (c == 3) {
+                    document.getElementById('yes').click()
+                }
+
+            }
+            else {
+                document.getElementById('rect').style.backgroundColor = "green";
+                stopCount()
+                c = 0;
+
+            }
+        
+    
     },
     end() {
       GazeCloudAPI.StopEyeTracking();
